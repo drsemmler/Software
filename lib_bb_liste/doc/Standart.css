@@ -1,0 +1,31 @@
+body {
+ font-family: Arial;
+ font-size: 20px;
+ color: #006600;
+ background: #99FF66;
+}
+H1 {
+ font-family: Comic Sans MS;
+ font-size: 40px;
+ font-weight: bold;
+ text-decoration: none;
+ text-align: center;
+ color: #99FF66;
+ background: #006600;
+}
+H2 {
+ font-size: 30px;
+ font-weight: bold;
+ text-decoration: none;
+ text-align: center;
+}
+a {
+ font-weight: bold;
+ color: #339900;
+}
+a:hover {
+ color: #66CC00;
+}
+TR.optional {
+ color: #009900;
+}

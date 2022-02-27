@@ -1,0 +1,360 @@
+<HTML>
+<HEAD>
+<TITLE>Liste Funktionsreferenz</TITLE>
+<LINK REL="stylesheet" HREF="Standart.css" TYPE="text/css">
+</HEAD>
+
+<BODY>
+<H1>&quot;Liste&quot; Funktionsreferenz</H1>
+<H2><A name="1">1.) Inhaltsverzeichnis</H2></A>
+<OL START="1" TYPE="1">
+<LI><A href="#1">Inhaltsverzeichnis</A></LI>
+<LI><A href="#2">SetItem</A></LI>
+<LI><A href="#3">SetAllItems</A></LI>
+<LI><A href="#4">ResetList</A></LI>
+<LI><A href="#5">AddItem</A></LI>
+<LI><A href="#6">DeleteItem</A></LI>
+<LI><A href="#7">CreateColorBank</A></LI>
+<LI><A href="#8">CreateUserColorBank</A></LI>
+<LI><A href="#9">GetFocus</A></LI>
+<LI><A href="#10">ListOffset</A></LI>
+<LI><A href="#11">DrawList</A></LI>
+<LI><A href="#12">DrawBox</A></LI>
+<LI><A href="#13">DrawPolygon</A></LI>
+<LI><A href="#14">DrawButton</A></LI>
+<LI><A href="#15">ContextMenue</A></LI>
+<CENTER><A HREF="Hilfe Printer.html">Druckerfreundliche Version</A><BR>
+Version: 1.00</CENTER>
+</OL>
+
+<H2><A name="2">2.) SetItem</H2></A>
+SetItem List%, Item%[, ItemName$[, FontColor%[, BackgroundColor%[, Unused%]]]]<P>
+
+Gibt einem bestimmten, bereits vorhandenen Item neue Werte.<P>
+
+Gibt keinen Wert zur&uuml;ck.<P>
+
+<TABLE bordercolordark="#006600" bordercolorlight="#CCFFCC" border="1" cellpadding="3" cellspacing="0">
+<TR valign="top">
+ <TD><B>Parameter</B></TD>
+ <TD><B>Bedeutung</B></TD>
+</TR>
+<TR valign="top">
+ <TD>List%</TD>
+ <TD>Gibt die Liste an, in der das Item ver&auml;ndert werden soll.</TD>
+</TR>
+<TR valign="top">
+ <TD>Item%</TD>
+ <TD>Gibt das Item an, das ver&auml;ndert werden soll</TD>
+</TR>
+<TR valign="top" class="optional">
+ <TD>ItemName$</TD>
+ <TD>Gibt den Text des Items an. Ein Wert von CHR$(1) l&auml;sst den text unver&auml;ndert.</TD>
+</TR>
+<TR valign="top" class="optional">
+ <TD>FontColor%</TD>
+ <TD>Gibt die Schriftfarbe an, die das Item haben soll. Bei einem Wert von -1 wird die Farbe nicht ver&auml;ndert. Ein Wert von 0 steht f&uuml;r die Standartfarbe der Liste und ein Wert von $1000000 steht f&uuml;r schwarz.</TD>
+</TR>
+<TR valign="top" class="optional">
+ <TD>BackgroundColor%</TD>
+ <TD>Gibt die Hintergrundfarbe an, die das Item haben soll. Bei einem Wert von -1 wird die Farbe nicht ver&auml;ndert. Ein Wert von 0 steht f&uuml;r die Standartfarbe der Liste und ein Wert von $1000000 steht f&uuml;r schwarz.</TD>
+</TR>
+<TR valign="top" class="optional">
+ <TD>Unused%</TD>
+ <TD>Wird z.Z. noch nicht verwendet, und sollten Sie auch nicht angeben.</TD>
+</TR>
+</TABLE>
+
+<H2><A name="3">3.) SetAllItems</H2></A>
+SetAllItems List%[, ItemName$[, FontColor%[, BackgroundColor%[, Unused%]]]]<P>
+
+Funktioniert wie <A href="#2">SetItem</A>, mit dem Unterschied, dass diese Funktion alle Items einer Liste ver&auml;ndert.
+
+<H2><A name="4">4.) ResetList</H2></A>
+ResetList List%<P>
+
+L&ouml;scht alle Items einer Liste.<P>
+
+Gibt keinen Wert zur&uuml;ck.<P>
+
+<TABLE bordercolordark="#006600" bordercolorlight="#CCFFCC" border="1" cellpadding="3" cellspacing="0">
+<TR valign="top">
+ <TD><B>Parameter</B></TD>
+ <TD><B>Bedeutung</B></TD>
+</TR>
+<TR valign="top">
+ <TD>List%</TD>
+ <TD>Gibt die Liste an, die zur&uuml;ckgesetzt werden soll.</TD>
+</TR>
+</TABLE>
+
+<H2><A name="5">5.) AddItem</H2></A>
+AddItem List%, ItemName$[, FontColor%[, BackgroundColor%[, Unused%]]]<P>
+
+F&uuml;gt ein neues Item ans Ende einer Liste ein.<P>
+
+Gibt keinen Wert zur&uuml;ck.<P>
+
+Die Bedeutungen der Parameter sind wie in <A href="#2">SetItem</A>.
+
+<H2><A name="6">6.) DeleteItem</H2></A>
+DeleteItem List%[, Item%]<P>
+
+L&ouml;scht ein bestimmtes Item.<P>
+
+Gibt keinen Wert zur&uuml;ck.<P>
+
+<TABLE bordercolordark="#006600" bordercolorlight="#CCFFCC" border="1" cellpadding="3" cellspacing="0">
+<TR valign="top">
+ <TD><B>Parameter</B></TD>
+ <TD><B>Bedeutung</B></TD>
+</TR>
+<TR valign="top">
+ <TD>List%</TD>
+ <TD>Gibt die Liste an, in der das Item gel&ouml;scht werden soll.</TD>
+</TR>
+<TR valign="top">
+ <TD>Item%</TD>
+ <TD>Gibt das Item an, das gel&ouml;scht werden soll. Wird der Parameter weggelassen, wird das letzte Item in der Liste gel&ouml;scht.</TD>
+</TR>
+</TABLE>
+
+<H2><A name="7">7.)CreateColorBank</H2></A>
+ColorBank% = CreateColorBank(Hintergrund%[, Vordergrund%])<P>
+
+Erstellt eine Farbdatenbank aus einer Vor- und Hintergrundfarbe.<P>
+
+Gibt die Farbdatenbank zur&uuml;ck.<P>
+
+<TABLE bordercolordark="#006600" bordercolorlight="#CCFFCC" border="1" cellpadding="3" cellspacing="0">
+<TR valign="top">
+ <TD><B>Parameter</B></TD>
+ <TD><B>Bedeutung</B></TD>
+</TR>
+<TR valign="top">
+ <TD>Hintergrund%</TD>
+ <TD>Hintergrundfarbe als rgb-Wert.</TD>
+</TR>
+<TR valign="top">
+ <TD>Vordergrund%</TD>
+ <TD>Schriftfarbe als rgb-Wert. Wird der Parameter weggelassen, ist die Schrift schwarz.</TD>
+</TR>
+</TABLE>.
+
+<H2><A name="8">8.) CreateUserColorBank</H2></A>
+ColorBank% = CreateUserColorBank(FontColor%, BackgroundColor%, TrackColor%, ArrowColor%, HighlightColor%, LightColor%, ShadowColor%, DarkShadowColor%)<P>
+
+Erstellt eine Farbdatenbank aus verschiedenen Angaben.<P>
+
+Gibt die Farbdatenbank zur&uuml;ck.<P>
+
+<TABLE bordercolordark="#006600" bordercolorlight="#CCFFCC" border="1" cellpadding="3" cellspacing="0">
+<TR valign="top">
+ <TD><B>Parameter</B></TD>
+ <TD><B>Bedeutung</B></TD>
+</TR>
+<TR valign="top">
+ <TD>FontColor%</TD>
+ <TD>Die Farbe der Schrift</TD>
+</TR>
+<TR valign="top">
+ <TD>BackgroundColor%</TD>
+ <TD>Hintergrundfarbe</TD>
+</TR>
+<TR valign="top">
+ <TD>TrackColor%</TD>
+ <TD>Farbe des Scrollbalkens.</TD>
+</TR>
+<TR valign="top">
+ <TD>ArrowColor%</TD>
+ <TD>Farbe der Pfeile</TD>
+</TR>
+<TR valign="top">
+ <TD>HighlightColor%</TD>
+ <TD>Farbe des Rahmens oben links</TD>
+</TR>
+<TR valign="top">
+ <TD>LightColor%</TD>
+ <TD>Farbe des Rahmens oben links</TD>
+</TR>
+<TR valign="top">
+ <TD>ShadowColor%</TD>
+ <TD>Farbe des Rahmens unten rechts</TD>
+</TR>
+<TR valign="top">
+ <TD>DarkShadowColor%</TD>
+ <TD>Farbe des Rahmens unten rechts</TD>
+</TR>
+</TABLE>
+
+<H2><A name="9">9.) GetFocus</H2></A>
+Focus% = GetFocus(X%, Y%, Width%, Height%, List%, Offset%)<P>
+
+Stellt fest, &uuml;ber welchem Element der Liste sich die Maus befindet.<P>
+
+Gibt die Item-Nummer des Elementes zur&uuml;ck, oder 0, wenn sich die Maus &uuml;ber keinem Item in der Liste befindet.<P>
+
+Die Bedeutungen der Parameter sind wie in <A href="#11">DrawList</A>.
+
+<H2><A name="10">10.) ListOffset</H2></A>
+Offset% = ListOffset(X%, Y%, Width%, Height%, List%, Offset%)<P>
+
+Ermittelt, ob der Benutzer an der Liste scrollt. Diese Funktion sollte in der gleichen Schleife untergebracht werden, wie die Zeichenfunktion.<P>
+
+Gibt zur&uuml;ck, um wie viel die Liste gescrollt ist.<P>
+
+Die Bedeutungen der Parameter sind wie in <A href="#11">DrawList</A>.
+
+<H2><A name="11">11.) DrawList</H2></A>
+DrawList X%, Y%, Width%, Height%, ColorBank%, List%[, Offset%[, Deep%]]<P>
+
+Zeichnet eine Liste.<P>
+
+Gibt keinen Wert zur&uuml;ck.<P>
+
+<TABLE bordercolordark="#006600" bordercolorlight="#CCFFCC" border="1" cellpadding="3" cellspacing="0">
+<TR valign="top">
+ <TD><B>Parameter</B></TD>
+ <TD><B>Bedeutung</B></TD>
+</TR>
+<TR valign="top">
+ <TD>X%</TD>
+ <TD>X-Koordinate der oberen linken Ecke der Liste</TD>
+</TR>
+<TR valign="top">
+ <TD>Y%</TD>
+ <TD>Y-Koordinate der oberen linken Ecke der Liste</TD>
+</TR>
+<TR valign="top">
+ <TD>Width%</TD>
+ <TD>Breite der Liste</TD>
+</TR>
+<TR valign="top">
+ <TD>Height%</TD>
+ <TD>H&ouml;he der Liste</TD>
+</TR>
+<TR valign="top">
+ <TD>ColorBank%</TD>
+ <TD>Die Farbdatenbank, die beim Zeichnen der Liste verwendet werden soll</TD>
+</TR>
+<TR valign="top">
+ <TD>List%</TD>
+ <TD>Gibt die Liste an, in der das Item ver&auml;ndert werden soll.</TD>
+</TR>
+<TR valign="top" class="optional">
+ <TD>Offset%</TD>
+ <TD>Das Offset, der Liste, das mit dem letzten Aufruf von <A href="#10">ListOffset</A> ermittelt wurde.</TD>
+</TR>
+<TR valign="top" class="optional">
+ <TD>Deep%</TD>
+ <TD>1 = Liste vertieft zeichnen (standart)<BR>
+  0 = Liste erh&ouml;ht zeichnen</TD>
+</TR>
+</TABLE>
+
+<H2><A name="12">12.) DrawBox</H2></A>
+DrawBox X%, Y%, Width%, Height%, ColorBank%[, Deep%]<P>
+
+Zeichnet ein Rechteck mit 3D-effekt.<P>
+
+Gibt keinen Wert zur&uuml;ck.<P>
+
+Die Bedeutungen der Parameter sind wie in <A href="#11">DrawList</A>.
+
+<H2><A name="13">13.) DrawPolygon</H2></A>
+DrawPolygon X%, Y%, Height%[, Down%]<P>
+
+Zeichnet ein Dreieck.<P>
+
+Gibt keinen Wert zur&uuml;ck.<P>
+
+<TABLE bordercolordark="#006600" bordercolorlight="#CCFFCC" border="1" cellpadding="3" cellspacing="0">
+<TR valign="top">
+ <TD><B>Parameter</B></TD>
+ <TD><B>Bedeutung</B></TD>
+</TR>
+<TR valign="top">
+ <TD>X%</TD>
+ <TD>X-Koordinate der oberen linken Ecke des Umrechteckes des Dreieckes</TD>
+</TR>
+<TR valign="top">
+ <TD>Y%</TD>
+ <TD>Y-Koordinate der oberen linken Ecke des Umrechteckes des Dreieckes</TD>
+</TR>
+<TR valign="top">
+ <TD>Height%</TD>
+ <TD>H&ouml;he des Dreieckes (Bestimmt automatisch auch die Breite)</TD>
+</TR>
+<TR valign="top" class="optional">
+ <TD>Down%</TD>
+ <TD>0 = Spitze des Dreieckes nach unten (Standart)<BR>
+  1 = Spitze des Dreieckes nach oben</TD>
+</TR>
+</TABLE>
+
+<H2><A name="14">14.) DrawButton</H2></A>
+Set% = DrawButton(X%, Y%, Width%, Height%, ColorBank%, ButtonText$)<P>
+
+Zeichnet einen Button und &uuml;berpr&uuml;ft, ob er gedr&uuml;ckt wird.<P>
+
+Gibt 1 zur&uuml;ck, wenn der Button gedr&uuml;ckt wird, ansonsten 0.<P>
+
+<TABLE bordercolordark="#006600" bordercolorlight="#CCFFCC" border="1" cellpadding="3" cellspacing="0">
+<TR valign="top">
+ <TD><B>Parameter</B></TD>
+ <TD><B>Bedeutung</B></TD>
+</TR>
+<TR valign="top">
+ <TD>X%</TD>
+ <TD>X-Koordinate der oberen linken Ecke des Buttons</TD>
+</TR>
+<TR valign="top">
+ <TD>Y%</TD>
+ <TD>Y-Koordinate der oberen linken Ecke des Buttons</TD>
+</TR>
+<TR valign="top">
+ <TD>Width%</TD>
+ <TD>Breite des Buttons</TD>
+</TR>
+<TR valign="top">
+ <TD>Height%</TD>
+ <TD>H&ouml;he des Buttons</TD>
+</TR>
+<TR valign="top">
+ <TD>ColorBank%</TD>
+ <TD>Die Farbdatenbank, die beim Zeichnen des Buttons verwendet werden soll</TD>
+</TR>
+<TR valign="top">
+ <TD>ButtonText$</TD>
+ <TD>Text, der auf dem Button erscheinen soll.</TD>
+</TR>
+</TABLE>
+
+<H2><A name="15">15.) ContextMenue</H2></A>
+Selection% = ContextMenue(List%, ColorBank%[, Deep%])<P>
+
+Zeihnet eine Liste als Kontextmen&uuml;.<P>
+
+Gibt die Nummer des ausgew&auml;hlten Eintrages zur&uuml;ck.<P>
+
+<TABLE bordercolordark="#006600" bordercolorlight="#CCFFCC" border="1" cellpadding="3" cellspacing="0">
+<TR valign="top">
+ <TD><B>Parameter</B></TD>
+ <TD><B>Bedeutung</B></TD>
+</TR>
+<TR valign="top">
+ <TD>List%</TD>
+ <TD>Die Liste, welche als Kontextmen&uuml; gezeichnet werden soll.</TD>
+</TR>
+<TR valign="top">
+ <TD>ColorBank%</TD>
+ <TD>Die Farb-Palette mit der das Kontextmen&uuml; gezeinet werden soll.</TD>
+</TR>
+<TR valign="top">
+ <TD>Deep%</TD>
+ <TD>0 = erh&ouml;ht zeichnen (standard)<BR>
+  1 = vertieft zeichnen</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>
