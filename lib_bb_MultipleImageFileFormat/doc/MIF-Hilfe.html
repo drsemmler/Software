@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 //EN">
+<HTML>
+<HEAD>
+<TITLE>MIF-Hilfe</TITLE>
+<META NAME="author" CONTENT="Diego Semmler">
+<META NAME="date" CONTENT="20.06.2005">
+<STYLE TYPE="text/css">
+body {
+ font-family: Arial;
+ font-size: 20px;
+ background: #00FF80;
+}
+h1 {
+ font-size: 50px;
+ font-weight: bold;
+ text-decoration: underline;
+ text-align: center;
+ color: #000080;
+}
+h2 {
+ font-size: 40px;
+ font-weight: bold;
+ text-align: center;
+ color: #004000;
+}
+h3 {
+ font-size: 30px;
+ font-weight: bold;
+ text-align: center;
+ color: #000000;
+}
+A {
+ text-decoration: underline;
+ color: #0000FF;
+}
+A:hover {
+ text-decoration: none;
+ color: #008000;
+}
+A:active {
+ text-decoration: underline;
+ color: #FF0000;
+}
+</STYLE>
+</HEAD>
+
+<BODY>
+<H1>Hilfe zum MIF Dateiformat</H1>
+<H2>Inhalt<A name="Inhalt"></A></H2>
+<A href="#Inhalt">Inhalt</A><BR>
+<A href="#WasistMIF">Was ist MIF?</A><BR>
+<A href="#Programme">Programme</A><BR>
+<A href="#VorundNachteile">Vor- und Nachteile</A><BR>
+<A href="#Begrenzungen">Begrenzungen</A>
+
+<H2>Was ist MIF?<A name="WasistMIF"></A></H2>
+MIF bedeutet &quot;Multiple Image File&quot;. Das MIF-Dateiformat wurde von Diego Semmler entwickelt, um die Weitergabe von Skins zu vereinfachen oder die Anzahl der Graphikdateien bei Spielen zu reduzieren. Das Besondere an MIF ist, dass bis zu 65.535 Grafikdateien in einer Datei zusammengefasst werden k&ouml;nnen. Die Bilder k&ouml;nnen unterschiedlich gro&szlig; (Pixel) sein und auf Wunsch komprimiert werden. MIF hilft so Speicherplatz zu sparen.
+
+<H2>Programme<A name="Programme"></A></H2>
+Es gibt nicht sehr viele Programme, die das MIF-Dateiformat unterst&uuml;tzen. Die momentan wichtigsten sind hier aufgef&uuml;hrt:<P>
+
+<TABLE cellpadding="3" border="1">
+<TR valign="top">
+ <TD>MIF-Viewer</TD>
+ <TD>Ein simples Programm zum Betrachten der Bilder. Der Dateiname wird entweder als Kommandozeile &uuml;bergeben oder direkt eingegeben. Mit [Bild hoch] und [Bild runter] kann man zwischen den verschiedenen Bildern einer Datei wechseln.</TD>
+</TR>
+<TR valign="top">
+ <TD>MIF-Editor</TD>
+ <TD>Das momentan umfangreichste Programm, um MIF-Dateien zu erstellen. Zur <A HREF="MIF-Editor Hilfe.html" TITLE="Zur Hilfe des MIF-Editors">Hilfe</A>.</TD>
+</TR>
+<TR valign="top">
+ <TD>MIF-Writer</TD>
+ <TD>Ein Kommandozeilentool um MIF-Dateien zu erstellen. Das Eingeben ist zwar etwas unbequem, daf&uuml;r gibt es die M&ouml;glichkeit Scripts zu erstellen und abzuspielen. Wer h&auml;ufig MIF-Dateien erstellt, sollte sich mit diesem Programm befassen, zumal es manche Optionen anbietet, die der MIF-Editor nicht hat.</TD>
+</TR>
+</TABLE>
+
+<H2>Vor- und Nachteile<A name="VorundNachteile"></A></H2>
+<TABLE width="100%" border="0">
+<TR valign="top">
+ <TD width="50%"><H3>Vorteile:</H3>
+  <UL>
+   <LI>MIF ist absolut kostenlos. (Das ist keine Selbstverst&auml;ndlichkeit)</LI>
+   <LI>Es k&ouml;nnen viele Bilder zusammangefasst werden. Das spart effektiv Speicherplatz auf der Festplatte, weil der Slack-Bereich geringer ist. Werden viele kleine Bilder zusammengefasst, kann dadurch mehr gespart werden, wie mit jedem anderen Format.</LI>
+   <LI>Bilder k&ouml;nnen komprimiert werden. Das spart noch mal Speicherplatz.</LI>
+   <LI>Will man nur eine Fabige Fl&auml;che speichern, kann das direkt eingegeben werden. Ist einfacher und spart Speicherplatz.</LI>
+   <LI>Auch Farbverl&auml;ufe k&ouml;nnen direkt eingegeben werden.</LI>
+   <LI>Weil man MIF-Bilder nicht direkt bearbeiten kann, entf&auml;llt der Reiz die Bilder eines Spiels oder Skins zu ver&auml;ndern.</LI>
+  </UL></TD>
+ <TD width="50%"><H3>Nachteile:</H3>
+  <UL>
+   <LI>Der Quellcode zum &Ouml;ffnen der Dateien ist nur in Blitz-Basic vorhanden.</LI>
+   <LI>Die Kompression ist nicht so stark wie bei den meisten anderen Grafikformaten.</LI>
+   <LI>Die Verbreitung ist gering: Nur wenige k&ouml;nnen .mif-Dateien &ouml;ffnen.</LI>
+   <LI>Siehe unter <A href="#Begrenzungen" hidefocus>Begrenzungen</A></LI>
+  </UL></TD>
+</TR>
+</TABLE>
+
+<H2>Begrenzungen<A name="Begrenzungen"></A></H2>
+<UL>
+<LI>Es k&ouml;nnen maximal 65.535 Bilder mit je bis zu 255 Frames a max. 65.535 x 65.535 Pixel in einer Datei gespeichert werden.</LI>
+<LI>Der Kommentar kann max. 65.535 Bytes gro&szlig; sein.</LI>
+<LI>Ein Bild darf bis zu 2.147.483.647 Bytes gro&szlig; sein.</LI>
+<LI>Die einzige zugelassene Farbtiefe ist 24 Bit.</LI>
+<LI>Pro Bild kann (momentan) nur eine Kompressionsart angewendet werden.</LI>
+</UL>
+</BODY>
+</HTML>
