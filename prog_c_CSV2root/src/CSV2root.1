@@ -1,0 +1,83 @@
+.TH "CSV2root" "1" "Version 0.2" "Diego Semmler" "CSV converter to root files"
+
+.SH NAME
+CSV2root \- Converts the given CSV tables into a root file.
+
+.SH SYNOPSIS
+.B CSV2root
+.I [Options] Infile1.csv [Options] [Infile2.csv]
+.RB ...
+
+.SH DESCRIPTION
+Reads the given CSV files and creates a root files. Each CSV file will be a tree inside the root file. Each column will be a leaf. Each row an entry. By default the data types of the leaves are selected automatically so, that the information is conserved at less space as possible. The first row in each CSV file has to contain the names of the columns. This row is not considered in finding the data types.
+
+CSV2root 0.2 by Diego Semmler (dsemmler ät ikp.physik.tu-darmstadt.de)
+
+Usage: CSV2root [Options] Infile1.csv [Options] [Infile2.csv] ...
+
+.SS GLOBAL OPTIONS
+These options affect the output file or the behavior of the program and should be only specified once. The position does not matter.
+.IP -c --compression
+The compression level of the outfile (default: 1)
+.IP -t --title
+The title of the root file (default: "ROOT file")
+.IP -o --outfile
+Path and/or name of the root file. Default is the first infile with the extension changed to .root.
+.IP -v --verbosity
+Changes the verbosity in different levels from no output except errors (0) to full output (3). (default: 1)
+
+.SS FILE OPTIONS
+These options affect how the input file is read. They must be specified before the input file. Any change of these options affects all following input files until it is overwritten by giving the same option again.
+.IP -s --separator
+The separator between the columns (default: ";")
+.IP -l --lineseparator
+The separator between the rows (default: newline)
+.IP -b --buffer
+Size of the root buffer (It is only used for the root file, the CSV file is read at once.) (default: 65536)
+.IP -t --treetitle
+Title of the root tree (default: "Created from a .csv file")
+.IP -n --name
+Name of the root tree. The default is the name of the infile without extension.
+.IP -i --treetitle
+Title of the root tree. The default the string "Created from a .csv file" is used.
+.IP -d --datatypes
+Specifies the data-type manually. If only on character is given, all columns will have this data-type. If more than one character is given, each character stands for the data-type of a row. The number of characters should match the number of columns in the file. If this is not the case, a warning is given that surplus data-types or columns will be ignored. With full verbosity (-v 3) a string is printed which can be used as input to the -d option. Possible data-types are:
+.br
+C     string
+.br
+O     boolean
+.br
+b     8 bit integer unsigned
+.br
+B     8 bit integer signed.
+.br
+s     16 bit integer unsigned
+.br
+S     16 bit integer signed
+.br
+i     32 bit integer unsigned
+.br
+I     32 bit integer signed
+.br
+l     64 bit integer unsigned
+.br
+L     64 bit integer signed
+.br
+F     32 bit float
+.br
+D     64 bit float
+.br
+v     void (The column will be ignored.)
+
+.SH EXAMPLES
+.SS CSV2root MyData.csv
+Simply converts MyData.csv into a root file.
+
+.SS CSV2root MyData.csv -s , -t MoreData -n MyData2 CommaSeparatedData.csv -o Data.root -c 9 -v 2
+Creates a file Data.root with the content of MyData.csv in the tree MyData. The content of CommaSeparatedData.csv is in the tree MyData2 with the title MoreData. Compression factor and verbosity are increased.
+
+.SH BUGS
+Please report bugs to the author.
+
+.SH AUTHOR
+Diego Semmler (diego ät messenger.dsemmler.de)
