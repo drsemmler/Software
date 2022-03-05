@@ -8,5 +8,8 @@ bin/Eraser: src/Eraser.c src/conio.c
 install: bin/Eraser
 	cp bin/Eraser /bin/
 
+uninstall:
+	rm /bin/Eraser
+
 clean:
 	rm bin/Eraser
