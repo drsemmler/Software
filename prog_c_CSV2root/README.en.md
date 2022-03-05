@@ -2,9 +2,14 @@ CSV2root
 ========
 CSV2root converts one or several tables in the .csv format into a root tree. The program
 "Root" is developed by the CERN and is widely in use for data analysis in particle and
-nuclear physics.
+nuclear physics. For the installation the root framework needs to be installed already.
 
 Version:	0.2
+Installation:	The program needs to be compiles first. At linux the Make-script in this
+	directory does the job for you:
+	Make - Compiles the programm.
+	Make install - Compiles the program and installs it with the help.
+	Make uninstall - Reverts the installation.
 Usage:	CSV2root is operated over the command line. Use following syntax:
 	./CSV2root -o output.root [options] file1.csv [more options] [file2.csv] ...
 	This call creates the file output.root and writes a tree for each given .csv file

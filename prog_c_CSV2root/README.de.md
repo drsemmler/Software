@@ -2,13 +2,15 @@ CSV2root
 ========
 CSV2root wandelt ein oder mehrere Tabellen im .csv-Format in einen Root-Tree um. Das
 Programm "Root" wird vom Cern entwickelt und wird in der Teilchen- und Kernphysik zur
-Datenanalyse verwendet.
+Datenanalyse verwendet. Für die Installation muss Root auf dem Rechner bereits
+installiert sein.
 
 Version:	0.2
-Installation:	Das Programm muss zuerst compiliert werden. Der entsprechende Befehl
-	steht am Anfang der Datei CSV2root.c und kann dann in das Path-Verzeichnis (siehe
-	unten) kopiert werden. Das Script CSV2root_installer.sh übernimmt diese Schritte
-	auf unixoiden Betriebssystemen z.B. Linux bei entsprechenden Rechten automatisch.
+Installation:	Das Programm muss zuerst compiliert werden. Bei Linux übernimmt dies das
+	Make-Script in diesem Verzeichnis.
+	Make - Kompiliert das Programm.
+	Make install - Kompiliert und installiert das Programm und die Hilfe.
+	Make uninstall - Macht die Installation rückgängig.
 Bedienung:	CSV2root wird über die Kommandozeile bedient. Benutze dazu folgendes Schema:
 	./CSV2root -o Ausgabe.root [Optionen] Datei1.csv [Mehr Optionen] [Datei2.csv] ...
 	Dieser Aufruf legt die Datei Ausgabe.root an und schreibt einen Tree für jede
