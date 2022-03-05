@@ -1,5 +1,5 @@
 Dim ListContent$(32768, 8)
-Dim ListColors%(32768, 3, 8) ; 1 = Vorsergrund; 2 = Hintergrund; 3 = Frei
+Dim ListColors%(32768, 3, 8) ; 1 = Vordergrund; 2 = Hintergrund; 3 = Frei
 Dim ListLength%(8)
 
 ;Benutze -1 bzw. CHR$(1) um die Werte nicht zu verändern, bzw. -2 um Farbangaben zu entfernen.
@@ -14,6 +14,7 @@ End Function
 
 ;Benutze -1 bzw. CHR$(1) um die Werte nicht zu verändern, bzw. -2 um Farbangaben zu entfernen.
 Function SetAllItems(List%, ItemName$ = "", FontColor% = -1, BackgroundColor% = -1, Unused% = -1)
+Local Item%
 For Item% = 1 To ListLength%(List%)
 	If ItemName$ <> Chr$(1) Then ListContent$(Item%, List%) = ItemName$
 	If FontColor% >= 0 Then ListColors%(Item%, 1, List%) = FontColor%
@@ -218,4 +219,18 @@ While Not MouseDown(1)
 	Flip
 	Wend
 Return GetFocus(X%, Y%, MenueWidth%, MenueHeight%, List%, 0)
+End Function
+
+Function ListWidth(List%)
+Local Item%, Width%
+MaxWidth% = 0
+For Item% = 1 To ListLength%(List%)
+	Width% = StringWidth(ListContent$(Item%, List%))
+	If Width% > MaxWidth% Then MaxWidth% = Width%
+	Next
+Return MaxWidth% + 6
+End Function
+
+Function ListHeight(List%)
+Return ListLength%(List%) * FontHeight() + 6
 End Function
