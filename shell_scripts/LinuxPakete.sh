@@ -1,7 +1,8 @@
 #!/bin/cat
 
-# A list of recommended packages for different purposes.
-# You probably don't want to install all of them, so I leave it as code snippets rather than a sealed script.
+# A list of recommended packages for different purposes to set up a fresh linux system for peraonal use.
+# This list is not a script ready to install, because you probably don't want to install all of them,
+# so I leave it as code snippets rather than a sealed script.
 
 sudo add-apt-repository 'deb http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt all main'
 sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2667CA5C
@@ -29,3 +30,11 @@ sudo pip3 install pydot-ng theano keras tensorflow tensorflow-gpu
 
 sudo apt autoremove
 sudo apt-get check
+
+snap install dbeaver-ce jami # Database browser and telephone tool (if you know better ones let me know)
+snap install --classic android-studio
+snap install --classic mysql-workbench-community
+snap install --classic flutter
+snap install --classic intellij-idea-community
+snap install --classic pycharm-community
+snap install --classic node
